@@ -106,7 +106,7 @@ export default function JoinPage() {
           {/* グループ情報 */}
           <div className="space-y-3 mb-6 p-4 bg-white/5 rounded-lg border border-white/10">
             <div className="flex justify-between text-sm">
-              <span className="text-white/60">月顂</span>
+              <span className="text-white/60">月額</span>
               <span className="font-semibold text-white">
                 {group.monthly_amount.toLocaleString()}円
               </span>
@@ -154,7 +154,7 @@ export default function JoinPage() {
         </div>
 
         <div className="text-center mt-4">
-          <a href="/dashboard" className="text-xs text-white-50 hover:text-white-70 transition">
+          <a href="/dashboard" className="text-xs text-white/50 hover:text-white/70 transition">
             ダッシュボードへ戻る
           </a>
         </div>

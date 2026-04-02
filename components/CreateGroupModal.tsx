@@ -69,7 +69,7 @@ export default function CreateGroupModal({ triggerText, userId }: CreateGroupMod
           <div className="relative w-full bg-gradient-to-b from-[#111827] to-[#0a0e1a] border-t border-white/10 rounded-t-2xl p-6 animate-in">
             <div className="mb-6">
               <h2 className="text-xl font-bold gradient-text">新しいグループを作成</h2>
-              <p className="text-xs text-white/60 mt-1">信頼できるメンバーを始めましょう</p>
+              <p className="text-xs text-white/60 mt-1">信頼できるメンバーを集めてグループを始めましょう</p>
             </div>
 
             {error && (
@@ -85,7 +85,7 @@ export default function CreateGroupModal({ triggerText, userId }: CreateGroupMod
                 </label>
                 <input
                   type="text"
-                  placeholder="例: オフィスㄡ尽"
+                  placeholder="例: オフィス無峽"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   className="input-field w-full"

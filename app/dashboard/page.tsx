@@ -1,5 +1,5 @@
 import { redirect } from 'next/navigation'
-import { createClient } from 'A/lib/supabase/server'
+import { createClient } from '@/lib/supabase/server'
 import { createAdminClient } from '@/lib/supabase/admin'
 import GroupCard from '@/components/GroupCard'
 import CreateGroupModal from '@/components/CreateGroupModal'
@@ -117,5 +117,5 @@ export default async function DashboardPage() {
 
       <BottomNav userId={user.id} />
     </main>
-  
-  
+  )
+}

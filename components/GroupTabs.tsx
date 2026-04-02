@@ -129,7 +129,7 @@ export default function GroupTabs({
                   オーナー操作
                 </h3>
                 <button className="btn btn-danger w-full">
-                  👑️ グループを削除
+                  🗑️ グループを削除
                 </button>
               </div>
             )}

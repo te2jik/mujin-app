@@ -48,7 +48,7 @@ export default function MemberList({
             </div>
 
             {member.turn_order === currentTurn && (
-              <div className="text-xl">ğŸ‘</div>
+              <div className="text-xl">ğŸ‘‘</div>
             )}
           </div>
         ))}

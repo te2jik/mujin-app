@@ -35,7 +35,7 @@ export default function GroupCard({ group, turnOrder, userId }: GroupCardProps) 
             💰 {group.monthly_amount.toLocaleString()}円 / 月
           </p>
           <div className="badge badge-primary">
-            #{turnOrder} 順番目
+            #{turnOrder} 順番
           </div>
         </div>
         <div className="text-2xl">👥</div>
