@@ -39,14 +39,27 @@ export interface Message {
   group_id: string
   user_id: string
   body: string
+  message_type: 'text' | 'system'
+  system_action?: string
   created_at: string
 }
 
 export interface AuditLog {
   id: string
-  actor_user_id: string
-  group_id: string
+  actor_user_id: string | null
+  group_id: string | null
   action_type: string
-  payload: Record<string, unknown>
+  payload: Record<string, unknown> | null
   created_at: string
+}
+
+export interface GroupWithMembers extends Group {
+  group_members?: GroupMember[]
+  profiles?: Profile[]
+}
+
+export interface GroupWithAll extends Group {
+  group_members: (GroupMember & { profiles: Profile })[]
+  payments: Payment[]
+  messages: (Message & { profiles: Profile })[]
 }
