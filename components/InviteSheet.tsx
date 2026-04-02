@@ -7,6 +7,8 @@ interface InviteSheetProps {
   inviteCode: string
 }
 
+const canShare = typeof navigator !== 'undefined' && typeof navigator.share === 'function'
+
 export default function InviteSheet({ groupId, inviteCode }: InviteSheetProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -20,7 +22,7 @@ export default function InviteSheet({ groupId, inviteCode }: InviteSheetProps) {
   }
 
   const handleShare = async () => {
-    if (navigator.share) {
+    if (canShare) {
       try {
         await navigator.share({
           title: '無尽グループに参加しませんか?',
@@ -66,10 +68,10 @@ export default function InviteSheet({ groupId, inviteCode }: InviteSheetProps) {
                 onClick={handleShare}
                 className="btn btn-primary w-full"
               >
-                {navigator.share ? '📱 シェアする' : '📋 コピーする'}
+                {canShare ? '📱 シェアする' : '📋 コピーする'}
               </button>
 
-              {!navigator.share && (
+              {!canShare && (
                 <button
                   onClick={handleCopy}
                   className={`btn w-full transition ${
