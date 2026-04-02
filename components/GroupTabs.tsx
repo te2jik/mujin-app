@@ -45,7 +45,7 @@ export default function GroupTabs({
           <button
             key={t.id}
             onClick={() => setTab(t.id)}
-            className={`btn-item flex-1 py-2 text-xs font-medium transition ${
+            className={`tab-item flex-1 py-2 text-xs font-medium transition ${
               tab === t.id
                 ? 'active text-white border-b-2 border-indigo-500'
                 : 'text-white/60 border-b-2 border-transparent'
@@ -129,15 +129,15 @@ export default function GroupTabs({
                   オーナー操作
                 </h3>
                 <button className="btn btn-danger w-full">
-                  🗑️ グループを削除
+                  👑️ グループを削除
                 </button>
               </div>
             )}
 
-            { group.owner_id !== userId && (
+            {group.owner_id !== userId && (
               <div>
                 <button className="btn btn-danger w-full">
-                  က出
+                  退出
                 </button>
               </div>
             )}
@@ -145,6 +145,5 @@ export default function GroupTabs({
         )}
       </div>
     </div>
-  
-h
+  )
 }
