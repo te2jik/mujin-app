@@ -60,32 +60,34 @@ export default async function GroupPage({
   return (
     <main className="flex flex-col h-screen bg-gradient-to-b from-transparent to-transparent">
       {/* ヘッダー */}
-      <div className="sticky top-0 z-40 backdrop-blur bg-black/20 border-b border-white/5">
+      <div className="sticky top-0 z-40 backdrop-blur-xl bg-[#0a0e1a]/80 border-b border-white/5">
         <div className="p-4">
-          <a
-            href="/dashboard"
-            className="inline-flex items-center text-sm text-white/60 hover:text-white/80 mb-3 transition"
-          >
-            ← ダッシュボード
-          </a>
-          <div className="flex items-start justify-between">
-            <div>
-              <h1 className="text-2xl font-bold gradient-text">{group.name}</h1>
-              <div className="flex gap-4 text-xs text-white/60 mt-2">
-                <span>💰 {group.monthly_amount.toLocaleString()}円</span>
+          <div className="flex items-center gap-3 mb-3">
+            <a
+              href="/dashboard"
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition"
+            >
+              ←
+            </a>
+            <div className="flex-1">
+              <h1 className="text-xl font-bold gradient-text">{group.name}</h1>
+              <div className="flex gap-3 text-xs text-white/50 mt-0.5">
+                <span>💰 {group.monthly_amount.toLocaleString()}円/月</span>
                 <span>👥 {totalMembers}/{group.member_limit}人</span>
               </div>
             </div>
           </div>
 
-          {/* 今月の受取人 */}
           {members && members.length > 0 && currentTurn > 0 && (
-            <div className="mt-3 glass-card p-3">
-              <p className="text-xs text-white/60 mb-1">今月の受取人</p>
-              <p className="text-lg font-bold gradient-text">
-                {members.find((m: any) => m.turn_order === currentTurn)?.profiles
-                  ?.nickname || '未定'}
-              </p>
+            <div className="glass-card p-3 flex items-center gap-3">
+              <div className="text-2xl">👑</div>
+              <div>
+                <p className="text-xs text-white/50">今月の受取人</p>
+                <p className="text-base font-bold text-white">
+                  {members.find((m: any) => m.turn_order === currentTurn)?.profiles
+                    ?.nickname || '未定'}
+                </p>
+              </div>
             </div>
           )}
         </div>

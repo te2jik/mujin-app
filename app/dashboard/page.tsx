@@ -44,14 +44,14 @@ export default async function DashboardPage() {
   return (
     <main className="flex-1 flex flex-col overflow-y-auto pb-20">
       {/* ヘッダー */}
-      <div className="sticky top-0 z-40 backdrop-blur bg-black/20 border-b border-white/5">
-        <div className="p-6 flex items-center justify-between">
+      <div className="sticky top-0 z-40 backdrop-blur-xl bg-[#0a0e1a]/80 border-b border-white/5">
+        <div className="p-5 flex items-center justify-between">
           <div>
-            <p className="text-xs text-white/60 uppercase tracking-wide">おかえりなさい</p>
-            <h1 className="text-2xl font-bold gradient-text">{profile?.nickname || 'ゲスト'}</h1>
+            <h1 className="text-2xl font-bold gradient-text mb-0.5">無尽</h1>
+            <p className="text-xs text-white/50">おかえりなさい、{profile?.nickname || 'ゲスト'}さん</p>
           </div>
           <div
-            className="avatar w-14 h-14 text-xl"
+            className="avatar w-12 h-12 text-lg"
             style={{ background: profile?.avatar_color || '#6366f1' }}
           >
             {(profile?.nickname || 'G')[0]}

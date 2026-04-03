@@ -447,3 +447,32 @@ body {
     color: black;
   }
 }
+
+/* Improved safe area handling for mobile */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  nav.fixed.bottom-0 {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* Better focus states for accessibility */
+.btn:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 2px;
+}
+
+.input:focus-visible,
+.input-field:focus-visible {
+  outline: none;
+}
+
+/* Improved touch targets */
+@media (pointer: coarse) {
+  .btn {
+    min-height: 48px;
+  }
+
+  .tab-item {
+    min-height: 44px;
+  }
+}
